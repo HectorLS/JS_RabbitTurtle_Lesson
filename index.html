@@ -3,6 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Example</title>
+		<link rel="stylesheet" href="css/style.css">
 	</head>
 	<body>
 		<button id="button">Click me</button>
@@ -13,6 +14,35 @@
 				<li>Clicked <span>0</span> times</li>
 			</ul>
 		</div>
+
+		<table class="camel-table" border="1">
+			<tbody>
+				<tr>
+					<th>Players</th>
+					<th>POS 1</th>
+					<th>POS 2</th>
+					<th>POS 3</th>
+					<th>POS 4</th>
+					<th>POS 5</td>
+				</tr>
+				<tr class="player-one">
+					<td><span id="p1"><img src="img/rabbit.png" alt=""></span></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="final"></td>
+				</tr>
+				<tr class="player-two">
+					<td><span id="p2"><img src="img/turtle.png" alt=""></span></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td class="final"></td>
+				</tr>	
+			</tbody>
+		</table>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 		<script>
@@ -47,16 +77,41 @@
 		// 	console.log(numInt + 1);
 		// });
 
-		// Targeting only the selected LI elements
+		// // Targeting only the selected LI elements
 
-		$("li").on("click", function() {
-			var numString = $(this).find("span").html();
-			var numInt = parseInt(numString);
-			$(this).find("span").html(numInt + 1);
-			console.log(numInt + 1);
-		});
+		// $("li").on("click", function() {
+		// 	var numString = $(this).find("span").html();
+		// 	var numInt = parseInt(numString);
+		// 	$(this).find("span").html(numInt + 1);
+		// 	console.log(numInt + 1);
+		// });
+		
+		// ==============  EXERCISE 3  ===========
+
+		var p1 = document.querySelector("#p1");
+		var p2 = document.querySelector("#p2");
 
 
+		// function winner(){
+		// 	if ".player-one".contains(".final > span")
+		// 		alert("yeii");
+		// }
+
+
+		document.onkeyup = function movePlayer(e){
+			switch (e.keyCode) {
+				case 65:  // A 
+					p1.parentNode.nextElementSibling.appendChild(p1);
+					break;
+				case 75:  // K
+					p2.parentNode.nextElementSibling.appendChild(p2);
+					break;
+			}
+
+		};
+
+		// winner();
+		
 		</script>
 	</body>
 </html>
